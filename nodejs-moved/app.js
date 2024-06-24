@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors'); // Import the cors package
 const db = require('./models'); // Import the db object which includes sequelize instance
 const userRoutes = require('./routes/userroute');
-const router = express.Router();
 
 const app = express();
 
@@ -18,7 +17,8 @@ app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(userRoutes);
+// app.use(userRoutes);
+userRoutes(app);
 
 const PORT = process.env.PORT || 8000;
 
