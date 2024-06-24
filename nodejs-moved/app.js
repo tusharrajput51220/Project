@@ -8,12 +8,13 @@ const router = express.Router();
 const app = express();
 
 // Configure CORS
-app.use(cors({
-  origin: 'http://localhost:3000', // Allow only this origin
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-  credentials: true // Enable Access-Control-Allow-Credentials
-}));
+app.use(cors());
+// app.use(cors({
+//   origin: 'http://localhost:3000', // Allow only this origin
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
+//   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+//   credentials: true // Enable Access-Control-Allow-Credentials
+// }));
 
 app.use(bodyParser.json());
 app.use(userRoutes);
